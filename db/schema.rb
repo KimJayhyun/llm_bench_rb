@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_03_06_063913) do
+ActiveRecord::Schema[8.1].define(version: 2026_03_06_072436) do
   create_table "judgements", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.string "judge_model"
@@ -55,7 +55,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_06_063913) do
 
   create_table "sessions", force: :cascade do |t|
     t.datetime "created_at", null: false
-    t.string "status"
+    t.integer "status", default: 0
     t.text "system_prompt"
     t.string "title"
     t.datetime "updated_at", null: false
