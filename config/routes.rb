@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     member do
       post :run  # 특정 세션에 대해 실행
     end
+    resources :messages, only: [ :create, :destroy ]
   end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
