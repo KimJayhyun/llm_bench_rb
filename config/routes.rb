@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :sessions, only: [ :index, :show, :new, :create ] do
+    member do
+      post :run  # 특정 세션에 대해 실행
+    end
+    resources :messages, only: [ :create, :destroy ]
+  end
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

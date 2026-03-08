@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  session: one
+  message: one
+  llm_model: MyString
+  response: MyText
+  latency_ms: 1
+  input_tokens: 1
+  output_tokens: 1
+
+two:
+  session: two
+  message: two
+  llm_model: MyString
+  response: MyText
+  latency_ms: 1
+  input_tokens: 1
+  output_tokens: 1

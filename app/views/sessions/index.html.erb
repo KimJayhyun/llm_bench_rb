@@ -1,0 +1,27 @@
+<div class="max-w-4xl mx-auto">
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-bold">실험 세션 목록</h1>
+    <%= link_to "새 세션 만들기", new_session_path, class: "bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" %>
+  </div>
+
+  <% if @sessions.empty? %>
+    <p class="text-gray-500">아직 세션이 없어요. 새 세션을 만들어보세요!</p>
+  <% else %>
+    <div class="space-y-4">
+      <% @sessions.each do |session| %>
+        <div class="border rounded-lg p-4 hover:shadow-md transition">
+          <div class="flex justify-between items-center">
+            <div>
+              <h2 class="text-lg font-semibold"><%= session.title %></h2>
+              <p class="text-gray-500 text-sm mt-1"><%= session.created_at.strftime("%Y-%m-%d %H:%M") %></p>
+            </div>
+            <div class="flex items-center gap-3">
+              <%= status_badge(session.status) %>
+              <%= link_to "상세보기", session_path(session), class: "text-blue-500 hover:underline" %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

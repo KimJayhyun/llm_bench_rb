@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  run: one
+  score: 1
+  reasoning: MyText
+  judge_model: MyString
+
+two:
+  run: two
+  score: 1
+  reasoning: MyText
+  judge_model: MyString
