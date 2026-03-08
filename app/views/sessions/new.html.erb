@@ -1,2 +1,22 @@
-<h1>Sessions#new</h1>
-<p>Find me in app/views/sessions/new.html.erb</p>
+<div class="max-w-2xl mx-auto">
+  <h1 class="text-2xl font-bold mb-6">새 세션 만들기</h1>
+
+  <%= form_with model: @session do |f| %>
+    <div class="space-y-4">
+      <div>
+        <%= f.label :title, "세션 이름", class: "block text-sm font-medium text-gray-700" %>
+        <%= f.text_field :title, class: "mt-1 block w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500", placeholder: "예) llama3 vs qwen2.5 고객응대 테스트" %>
+      </div>
+
+      <div>
+        <%= f.label :system_prompt, "시스템 프롬프트", class: "block text-sm font-medium text-gray-700" %>
+        <%= f.text_area :system_prompt, rows: 6, class: "mt-1 block w-full border rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500", placeholder: "예) 너는 친절한 고객 응대 AI야." %>
+      </div>
+    </div>
+
+    <div class="mt-6 flex gap-3">
+      <%= f.submit "세션 생성", class: "bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 cursor-pointer" %>
+      <%= link_to "취소", sessions_path, class: "px-6 py-2 rounded border hover:bg-gray-100" %>
+    </div>
+  <% end %>
+</div>
